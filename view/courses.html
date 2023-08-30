@@ -3,38 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instructor List</title>
+    <title>Course List</title>
     <link rel="stylesheet" href="../style/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/instructor.js"></script> <!-- Include the instructor-related JavaScript file -->
+    <script src="../js/courses.js"></script> <!-- Include the courses-related JavaScript file -->
 </head>
 <body>
 
 <div id="navbarContainer"></div>
 
 <div class="container mt-5">
-    <h2>Instructor List</h2>
-    <div class="mb-3">
-        <a href="add-edit-instructor.html" class="btn btn-success">Add New Instructor</a>
+    <h2>Course List</h2>
+    <div id="addCourseBtn" class="mb-3">
+        <a href="add-edit-course.html" class="btn btn-success">Add Course</a>
     </div>
+    <br>
     <table class="table table-striped">
         <thead>
             <tr>
                 <th>ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
+                <th>Title</th>
                 <th>Actions</th>
             </tr>
         </thead>
-        <tbody id="instructorTableBody">
-            <!-- Instructor rows will be dynamically added here using JavaScript -->
-        </tbody>
+        <tbody id="courseTableBody"></tbody>
     </table>
     
     <ul class="pagination" id="pagination"></ul>
 </div>
+
 
 </body>
 </html>

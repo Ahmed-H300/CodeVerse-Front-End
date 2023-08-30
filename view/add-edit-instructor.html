@@ -1,0 +1,43 @@
+<!-- add-edit-instructor.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add/Edit Instructor</title>
+    <link rel="stylesheet" href="../style/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div id="navbarContainer"></div>
+
+<div class="container mt-5">
+    <h2>Add/Edit Instructor</h2>
+    <form id="instructorForm">
+        <input type="hidden" id="instructorId">
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" id="firstName" placeholder="Enter First Name">
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter Email">
+        </div>
+        <div class="form-group">
+            <label for="salary">Salary</label>
+            <input type="number" class="form-control" id="salary" placeholder="Enter Salary">
+        </div>
+        <button type="submit" class="btn btn-primary" id="submitBtn">Add Instructor</button>
+    </form>
+</div>
+
+<script src="../js/add-edit-instructor.js"></script>
+</body>
+</html>

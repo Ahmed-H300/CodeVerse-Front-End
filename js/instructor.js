@@ -1,3 +1,4 @@
+let currentPage = 1
 // instructor.js
 
 $(document).ready(function () {
@@ -5,7 +6,7 @@ $(document).ready(function () {
     $("#navbarContainer").load("navbar.html");
 
     // Initialize the current page number
-    let currentPage = 1;
+    currentPage = 1;
 
     // Fetch instructors and populate the table
     fetchInstructors(currentPage, populateTable);
@@ -25,6 +26,7 @@ function fetchInstructors(pageNumber, callback) {
     });
 }
 
+
 function populateTable(instructors) {
     const tableBody = $("#instructorTableBody");
     tableBody.empty();
@@ -36,13 +38,38 @@ function populateTable(instructors) {
                         <td>${instructor.lastName}</td>
                         <td>${instructor.email}</td>
                         <td>
-                            <button class="btn btn-info">Modify</button>
-                            <button class="btn btn-danger">Delete</button>
+                            <a href="instructor-details.html?id=${instructor.id}" class="btn btn-primary">Show Details</a>
+                            <a href="add-edit-instructor.html?id=${instructor.id}" class="btn btn-warning">Modify</a>
+                            <button class="btn btn-danger delete" data-instructor-id="${instructor.id}">Delete</button>
                         </td>
                     </tr>`;
         tableBody.append(row);
     });
+
+    // Add click event listener to delete buttons
+    $(".delete").click(function () {
+        const instructorId = $(this).data("instructor-id");
+        deleteInstructor(instructorId, currentPage);
+    });
 }
+
+
+function deleteInstructor(instructorId, currentPage) {
+    $.ajax({
+        url: `http://127.0.0.1:8080/codeverseuni/api/v1/instructors/${instructorId}`,
+        type: "DELETE",
+        success: function () {
+            // Refresh the table after successful deletion
+            fetchInstructors(currentPage, populateTable);
+        },
+        error: function () {
+            console.log("Error deleting instructor");
+        }
+    });
+}
+
+
+
 
 function updatePagination(totalPages, currentPage) {
     const pagination = $("#pagination");
