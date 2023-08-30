@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructor List</title>
+    <link rel="stylesheet" href="../style/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/instructor.js"></script> <!-- Include the instructor-related JavaScript file -->
+</head>
+<body>
+
+<div id="navbarContainer"></div>
+
+<div class="container mt-5">
+    <h2>Instructor List</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="instructorTableBody"></tbody>
+    </table>
+    
+    <ul class="pagination" id="pagination"></ul>
+</div>
+
+</body>
+</html>
