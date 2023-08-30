@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student List</title>
+    <link rel="stylesheet" href="../style/bootstrap.min.css" />
+  </head>
+  <body>
+    <div id="navbarContainer"></div>
+
+    <div class="container mt-5">
+      <h2>Student List</h2>
+      <div id="addStudentBtn" class="mb-3">
+        <a href="add-edit-student.html" class="btn btn-success">Add Student</a>
+      </div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="studentTableBody">
+          <!-- Student rows will be dynamically added here using JavaScript -->
+        </tbody>
+      </table>
+
+      <ul class="pagination" id="pagination"></ul>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/student.js"></script>
+  </body>
+</html>
